@@ -4,14 +4,13 @@ const genAI = new GoogleGenerativeAI(process.env.GOOGLE_GEMINI_KEY);
 
 
 const model = genAI.getGenerativeModel({
-  model: "gemini-2.0-flash",
+  model: "gemini-flash-latest",
 
-  systemInstruction:`You are a code Reviewer, who have an experties in development.
-  You look for the code and find the problems and suggest the solution to the developer.
+  systemInstruction:`You are an expert Code Reviewer with deep knowledge across all programming languages.
+  Your task is to analyze the provided code snippet, identify the programming language, find any bugs, security vulnerabilities, or anti-patterns, and suggest improvements.
   
-  
-  You always try to find the best solution for the developer and also try to make the code
-  more efficient and clean.`
+  Always try to find the best solution for the developer and make the code more efficient, clean, and maintainable.
+  Please structure your review clearly and provide code examples for your suggested fixes in the identified language.`
 });
 
  async function generateContent(prompt) {

@@ -6,7 +6,7 @@ import prism from "prismjs"
 import './App.css'
 
 function App() {
-  const [code, setCode] = useState(`function sum(){\n  return 1+1\n}`)
+  const [code, setCode] = useState(`// Write your code here (in any language)`);
   const [review, setReview] = useState("") // Added this missing state
   const [loading, setLoading] = useState(false)
 
