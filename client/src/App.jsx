@@ -19,7 +19,8 @@ function App() {
     setReview("Reviewing your code...");
     
     try {
-      const response = await axios.post('http://localhost:3000/ai/get-review', { code })
+      const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3000';
+      const response = await axios.post(`${apiUrl}/ai/get-review`, { code })
       setReview(response.data)
     } catch (error) {
       if (error.response && error.response.status === 429) {
