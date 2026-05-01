@@ -4,6 +4,7 @@
   "description": "Root package for running client and server together",
   "scripts": {
     "install": "npm install --prefix server && npm install --prefix client",
-    "dev": "npm run dev --prefix server & npm run dev --prefix client"
+    "dev": "npm run dev --prefix server & npm run dev --prefix client",
+    "build": "npm install --prefix client && npm run build --prefix client"
   }
 }
