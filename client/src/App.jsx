@@ -25,8 +25,10 @@ function App() {
     } catch (error) {
       if (error.response && error.response.status === 429) {
         setReview("Rate limit reached. Please wait 1 minute before trying again.");
+      } else if (error.response && error.response.data) {
+        setReview(`Error: ${error.response.data}`);
       } else {
-        setReview("Error: Could not reach the server.");
+        setReview(`Error: ${error.message || "Could not reach the server."}`);
       }
     } finally {
       setLoading(false);

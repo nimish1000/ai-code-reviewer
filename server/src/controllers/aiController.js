@@ -16,6 +16,6 @@ module.exports.getReview = async (req, res) => {
         console.error("AI Service Error:", error.message);
         
         // Send a 500 error instead of crashing the server
-        res.status(500).send("The AI service is currently overwhelmed. Please try again in a minute.");
+        res.status(500).send(error.message || "An unexpected error occurred.");
     }
 }
