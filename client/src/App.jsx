@@ -3,11 +3,12 @@ import "prismjs/themes/prism-tomorrow.css"
 import Editor from "react-simple-code-editor"
 import axios from "axios"
 import prism from "prismjs"
+import Markdown from "react-markdown"
 import './App.css'
 
 function App() {
   const [code, setCode] = useState(`// Write your code here (in any language)`);
-  const [review, setReview] = useState("") // Added this missing state
+  const [review, setReview] = useState("") 
   const [loading, setLoading] = useState(false)
 
   useEffect(() => {
@@ -58,9 +59,9 @@ function App() {
         </div>
       </div>
       <div className="right">
-        {/* This is where the AI response will now actually appear */}
-        <div style={{ padding: "1.5rem", whiteSpace: "pre-wrap" }}>
-          {review}
+        {/* Render markdown properly */}
+        <div style={{ padding: "1.5rem" }}>
+          <Markdown>{review}</Markdown>
         </div>
       </div>
     </main>
