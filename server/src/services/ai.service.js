@@ -4,7 +4,7 @@ const genAI = new GoogleGenerativeAI(process.env.GOOGLE_GEMINI_KEY);
 
 
 const model = genAI.getGenerativeModel({
-  model: "gemini-flash-latest",
+  model: "gemini-2.0-flash",
 
   systemInstruction:`You are an expert Code Reviewer with deep knowledge across all programming languages.
   Your task is to analyze the provided code snippet, identify the programming language, find any bugs, security vulnerabilities, or anti-patterns, and suggest improvements.
